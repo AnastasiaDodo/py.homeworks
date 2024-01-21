@@ -1,0 +1,8 @@
+input = int(input("Please type some num(4 digit): "))
+
+thousands = input // 1000
+hundreds = input // 100 % 10
+tens = input // 10 % 10
+ones = input % 10
+
+print(f"{thousands}\n{hundreds}\n{tens}\n{ones}")
