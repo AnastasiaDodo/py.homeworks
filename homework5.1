@@ -1,0 +1,21 @@
+import string
+import keyword
+
+def is_valid_variable_name(name):
+    if name.isidentifier() and not name.startswith('_') and not name.isdigit() and set(name) <= set(string.ascii_letters + string.digits + '_') and name.lower() not in keyword.kwlist:
+        print(True)
+    else:
+        print(False)
+
+# Приклади:
+is_valid_variable_name('_')  # Вивід: True
+is_valid_variable_name('x')  # Вивід: True
+is_valid_variable_name('get_value')  # Вивід: True
+is_valid_variable_name('get value')  # Вивід: False
+is_valid_variable_name('get!value')  # Вивід: False
+is_valid_variable_name('some_super_puper_value')  # Вивід: True
+is_valid_variable_name('Get_value')  # Вивід: False
+is_valid_variable_name('get_Value')  # Вивід: False
+is_valid_variable_name('getValue')  # Вивід: False
+is_valid_variable_name('3m')  # Вивід: False
+is_valid_variable_name('m3')  # Вивід: True
