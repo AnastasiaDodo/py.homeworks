@@ -1,0 +1,26 @@
+def calculate_sum_and_multiply(arr):
+    if not arr:
+        return 0
+
+    sum_of_even_indices = sum(arr[::2])
+    result = sum_of_even_indices * arr[-1]
+    return result
+
+# Приклади використання:
+example1 = [0, 1, 7, 2, 4, 8]
+result1 = calculate_sum_and_multiply(example1)
+print(result1)
+
+example2 = [1, 3, 5]
+result2 = calculate_sum_and_multiply(example2)
+print(result2)
+
+example3 = [6]
+result3 = calculate_sum_and_multiply(example3)
+print(result3)
+
+example4 = []
+result4 = calculate_sum_and_multiply(example4)
+print(result4)
+
+
