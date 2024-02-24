@@ -1,0 +1,29 @@
+# Задані словники
+my_dict_1 = {1: 10, 2: 20, 3: 30}
+my_dict_2 = {2: 200, 3: 300, 4: 400}
+
+# а) Список ключів, які є в обох словниках
+common_keys = [key for key in my_dict_1.keys() if key in my_dict_2]
+print("Спільні ключі:", common_keys)
+
+# б) Список ключів, які є у першому, але немає у другому словнику
+keys_only_in_first = [key for key in my_dict_1.keys() if key not in my_dict_2]
+print("Ключі, що є у першому словнику, але немає в другому:", keys_only_in_first)
+
+# в) Створення нового словника з парами {ключ:значення} для ключів, які є в першому, але немає в другому словнику
+new_dict = {key: my_dict_1[key] for key in keys_only_in_first}
+print("Новий словник з ключами з першого словника, яких немає в другому:", new_dict)
+
+# г) Об'єднання двох словників за вказаним правилом
+merged_dict = {}
+for key, value in my_dict_1.items():
+    if key in my_dict_2:
+        merged_dict[key] = [value, my_dict_2[key]]
+    else:
+        merged_dict[key] = value
+
+for key, value in my_dict_2.items():
+    if key not in my_dict_1:
+        merged_dict[key] = value
+
+print("Об'єднаний словник:", merged_dict)
