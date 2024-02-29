@@ -1,0 +1,7 @@
+def some_gen(begin, end, func):
+    current = begin
+    count = 0
+    while count < end:
+        yield current
+        current = func(current)
+        count += 1
