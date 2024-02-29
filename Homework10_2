@@ -1,0 +1,3 @@
+def is_even(digit):
+    """ Перевірка чи є парним число """
+    return digit % 2 == 0
